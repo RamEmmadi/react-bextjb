@@ -176,5 +176,21 @@ console.log(yo.getI());
 yo.setI(4);
 console.log(yo.getI());
 
+```
+
+- A simplet example would be any JS function which uses outer variable is an closure.
+
+example:
 
 ```
+let passed = 3;
+function addTo(){
+  let inner = 2;
+  return passed + inner;
+}
+
+console.log(addTo()); // print : 5
+console.dir(addTo)
+```
+
+11.
