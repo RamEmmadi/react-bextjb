@@ -23,7 +23,46 @@ function Example(){
 
 **useReducer**
 
--
+- useReducer similar to useState() to create local state inside funtional component. But it will be more useful when single action need to update the mulitple and complex state.
+
+```
+import React, { useReducer } from 'react';
+
+const reducerFun = (state, action) => {
+  switch(action.type){
+    case "INCREMENT":
+      return { count: state.count +1, showText: state.showText};
+
+    case "TOGGLETEXT":
+      return { count: state.count, showText: !state.showText};
+
+    default:
+      return state;
+  }
+}
+
+const ReducerTutoria = () => {
+
+  const [state, dispatch] = useRedcuer(reducerFun, {count: 0, showText: true});
+
+  return (<div>
+    <h1>{state.count}</h1>
+    <button onClick={()=>{
+      dispatch({type:"INCREMENT"});
+      dispatch({type:"TOGGLETEXT"})
+    }}>
+      CLICK ME!
+    </button>
+    <button onClick={()=>{
+      dispatch({type:"TOGGLETEXT"})
+    }}>
+      HIDE ME!
+    </button>
+  </div>);
+}
+
+
+```
 
 ---
 
