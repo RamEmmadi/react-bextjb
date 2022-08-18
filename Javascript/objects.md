@@ -21,6 +21,7 @@ let x = function(){
   console.log(v); // 2 as var will have funtion scope.
   console.log(l); // throws error
 }
+x();
 
 ```
 
@@ -35,4 +36,5 @@ let x = function(){
     var l = 1;
   }
 }
+x();
 ```
