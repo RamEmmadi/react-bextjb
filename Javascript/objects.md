@@ -143,3 +143,9 @@ let funE = function(){
 console.log("function expression");
 }
 ```
+
+8. what is promises and why do we use it ?
+
+9. What is setTimeout()?
+
+10. What is a closure and how do you use it?
