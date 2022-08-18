@@ -213,4 +213,6 @@ console.dir(addTo)
 
 ---
 
-11.
+**11.Difference between call(), apply() and bind()**
+
+---
