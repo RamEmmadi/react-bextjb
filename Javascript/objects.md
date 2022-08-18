@@ -38,3 +38,44 @@ let x = function(){
 }
 x();
 ```
+
+2. What is difference between "==" and "===" ?
+
+- "==" and "===" both are comparision operators.
+- "==" compares value but not its data types. When difference datatype values are compare with "==" operator, it will convert the right value datatype to match left side datatype.
+- "===" compares both datatypes and values. It won't do any datatype conversion.
+
+example:
+
+```
+let x = function(){
+  if(1 == '1'){
+    console.log('== ignore the datatype ');
+  }
+
+  if(!(1==='1')){
+    console.log('=== compare the datatypes also')
+  }
+}
+
+x();
+```
+
+3. What is difference between "let" and "const" keywords ?
+
+- "let" and "const" both are used to define variables. but both are used for different purposes.
+- "const" variable value needs to assigned at time of declaration. Whose value cannot to be reassigned further.
+- "let" variable values can be reassigned anytime.
+
+example:
+
+```
+let l = 1;
+l = 2;
+console.log(l); // pritns : 2
+
+const c = 1;
+c = 2;  // throws error
+console.log(c);
+
+```
