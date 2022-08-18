@@ -233,6 +233,59 @@ var addToThis = function(a){
 
 console.log(addToThis.call(obj, 4)); //print 6
 
+
+var addToThisMulti = function(a, b, c){
+  return this.num + a + b + c;
+}
+
+console.log(addToThisMulti.call(obj, 1, 2, 4)); //print 9
+
+```
+
+apply(): is very similar to call() interms of funtionality. except that array can be passed argument to function by combining the all arguments.
+
+```
+var obj = { num : 2 }
+
+var addToThisMulti = function(a, b, c){
+  return this.num + a + b + c;
+}
+
+console.log(addToThisMulti.apply(obj, [1, 2, 4])); //print 6
+```
+
+bind(): works in little different from apply() and call(). bind() return funtion by attaching object with target function. The returned function can executed anytime by passing args if needed.
+
+```
+
+var obj = {num : 2}
+var addToThis = function(a, b, c){
+  return this.num + a + b + c
+}
+var arr = [1, 2, 3]
+
+var bound = addToThis.bind(obj);
+
+console.log(bound(1,2,3));
+```
+
+syntax for call(), bind(), apply():
+
+```
+
+var obj = {num:2};
+
+var functionName = function(arg1, arg2, arg3){
+
+};
+
+functionName.call(obj, arg1, arg2, arg3 );
+
+functionName.apply(obj, [arg1, arg2, arg3]);
+
+var bound = functionName.bind(obj);
+bound(arg1, arg2, arg3);
+
 ```
 
 ---
