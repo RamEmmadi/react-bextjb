@@ -78,4 +78,11 @@ const c = 1;
 c = 2;  // throws error
 console.log(c);
 
+const h; // undefined value will be assigned to h
+h=1; // throw error
+
+const arr = [1];
+arr.push(2) // as arr is a object, it will let add or remove values from arr.
+console.log(arr);
+
 ```
