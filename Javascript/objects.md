@@ -145,5 +145,3 @@ let funE = function(){
 console.log("function expression");
 }
 ```
-
-- f
