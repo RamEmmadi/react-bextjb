@@ -1,6 +1,6 @@
 # Javascript top questions:
 
-1. What is difference between "var" and "let" keywords?
+**1. What is difference between "var" and "let" keywords?**
 
 - "var" exists since beginning for Javascript whereas "let" was keyword introduced in ES6.
 - "var" will have function scope. whereas "let" will have block scope.
@@ -37,7 +37,9 @@ let x = function(){
 x();
 ```
 
-2. What is difference between "==" and "===" ?
+---
+
+**2. What is difference between "==" and "===" ?**
 
 - "==" and "===" both are comparision operators.
 - "==" compares value but not its data types. When difference datatype values are compare with "==" operator, it will convert the right value datatype to match left side datatype.
@@ -59,7 +61,9 @@ let x = function(){
 x();
 ```
 
-3. What is difference between "let" and "const" keywords ?
+---
+
+**3. What is difference between "let" and "const" keywords ?**
 
 - "let" and "const" both are used to define variables. but both are used for different purposes.
 - "const" variable value needs to assigned at time of declaration. Whose value cannot to be reassigned further.
@@ -85,7 +89,9 @@ console.log(arr);
 
 ```
 
-4. what is difference between "null" and "undefined";
+---
+
+**4. what is difference between "null" and "undefined";**
 
 - "null" and "undefined" both represent the empty value.
 - but when variable is declared but whose value not defined, JS will automatically assign "undefined" value.
@@ -96,9 +102,13 @@ typeof(undefined) => undefined.
 typeof(null) => object.
 ```
 
-5. what is Arrow funtion & what are it uses?
+---
 
-6. What is prototype inheritance?
+**5. what is Arrow funtion & what are it uses?**
+
+---
+
+**6. What is prototype inheritance?**
 
 - every object has property called prototype which can be used to add properties and methods to it. when a new object is created from it, the new object will inherit all properites and methods from parent. This way object will be much lighter and inherit existing funtionalities from parent object.
 
@@ -121,7 +131,9 @@ console.log(nissan.getModel());
 
 ```
 
-7. what is the difference between function declaration & function expression ?
+---
+
+**7. what is the difference between function declaration & function expression ?**
 
 - Syntatically funtion declartion will have function keyword & name. whereas function expression is an annonymous function will be stored inside a varaible.
 
@@ -144,9 +156,13 @@ console.log("function expression");
 }
 ```
 
-8. what is promises and why do we use it ?
+---
 
-9. What is setTimeout()?
+**8. what is promises and why do we use it ?**
+
+---
+
+**9. What is setTimeout()?**
 
 ---
 
@@ -194,5 +210,7 @@ function addTo(){
 console.log(addTo()); // print : 5
 console.dir(addTo)
 ```
+
+---
 
 11.
