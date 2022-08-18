@@ -148,7 +148,7 @@ console.log("function expression");
 
 9. What is setTimeout()?
 
-10. What is a closure and how do you use it?
+**10. What is a closure and how do you use it?**
 
 - When a function returns a inner function which hold outer environment. Then it is called closure.
 
