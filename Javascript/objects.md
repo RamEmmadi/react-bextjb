@@ -86,3 +86,64 @@ arr.push(2) // as arr is a object, it will let add or remove values from arr.
 console.log(arr);
 
 ```
+
+4. what is difference between "null" and "undefined";
+
+- "null" and "undefined" both represent the empty value.
+- but when variable is declared but whose value not defined, JS will automatically assign "undefined" value.
+- "null" something we assigned to any variable to represents it is empty.
+
+```
+typeof(undefined) => undefined.
+typeof(null) => object.
+```
+
+5. what is Arrow funtion & what are it uses?
+
+6. What is prototype inheritance?
+
+- every object has property called prototype which can be used to add properties and methods to it. when a new object is created from it, the new object will inherit all properites and methods from parent. This way object will be much lighter and inherit existing funtionalities from parent object.
+
+example:
+
+```
+let car = function(model){
+  this.model = model;
+}
+
+car.prototype.getModel = function(){
+  return this.model;
+}
+
+let toyota = new car("toyota");
+console.log(toyota.getModel());
+
+let nissan = new car("nissan");
+console.log(nissan.getModel());
+
+```
+
+7. what is the difference between function declaration & function expression ?
+
+- Syntatically funtion declartion will have function keyword & name. whereas function expression is an annonymous function will be stored inside a varaible.
+
+- function declartion is available before its definition if you call. whereas function expression will be undefined before it definition.
+- You can pass function express to another function as parameter, but you cannot pass function declaration as parameter.
+
+example:
+
+```
+console.log(funD()); // will be available before it definition.
+console.log(funE()); // thows undefined error: as it not available before its definition.
+
+
+function funD(){
+console.log("functiona declaration");
+}
+
+let funE = function(){
+console.log("function expression");
+}
+```
+
+- f
