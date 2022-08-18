@@ -217,4 +217,22 @@ console.dir(addTo)
 
 - Each object will have it own properties and methods. but in JS we can implement methods separately and object with properties separately. And apply these methods on object using call(), apply() and bind(). This way object would be simpler and lighter. As a result, we will have a scope to implement thounds of object.
 
+call():
+
+funName.call(object, funArgs...);
+
+example for call():
+
+```
+
+var obj = {num:2}
+
+var addToThis = function(a){
+  return this.num + a;
+}
+
+console.log(addToThis.call(obj, 4)); //print 6
+
+```
+
 ---
