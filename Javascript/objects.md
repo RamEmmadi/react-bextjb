@@ -19,7 +19,7 @@ let x = function(){
     var l = 1;
   }
   console.log(v); // 2 as var will have funtion scope.
-  console.log(l); // throws error
+  console.log(l); // throws undefined error
 }
 x();
 
@@ -31,7 +31,7 @@ example to show hoisting:
 let x = function(){
   if(true){
     console.log(v); // undefined; because though v is declared but assinged undefined value by default
-    console.log(l); // throws error: as l not hoisting, l is not available throws error.
+    console.log(l); // throws undefined error: as l not hoisting, l is not available throws error.
     var v = 2;
     var l = 1;
   }
