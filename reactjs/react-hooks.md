@@ -103,6 +103,35 @@ function Example(){
 
 **useRef()**
 
+- Function Signature:
+
+```
+const refContainer = useRef(initialValue);
+```
+
+- useRef() Hook used for creating refs that gives direct access to DOM elements.
+- This is more useful when working wiht forms.
+
+```
+const Example = () => {
+
+  const textboxRef = useRef(null);
+
+  const btnHandler = () => {
+    // 'current' points to mounted text input element
+    textboxRef.current.focus();
+  };
+
+  return(
+    <>
+      <input ref={textboxRef} type="text">
+      <button onClick={btnHandler}>Focus the Box</button>
+    </>
+  )
+}
+
+```
+
 ---
 
 **useLayoutEffect()**
