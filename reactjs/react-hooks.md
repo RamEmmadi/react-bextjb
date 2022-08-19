@@ -71,6 +71,7 @@ const ReducerTutoria = () => {
 - useEffect() hook helps in performing the side effects such DOM manipulation, Data fetching, Subscriptions etc.
 - useEffect() helps in implementing class component lifecycle events like componentDidMount, componentDidUpdate and componentWillUnmount in functional component.
 - useEffect() will run on each render cycle.
+- useEffect(callback, list of depnedencies to update component)
 
 ```
 import React, {useState, useEffect} from 'react';
