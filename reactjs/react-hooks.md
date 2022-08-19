@@ -66,26 +66,28 @@ const ReducerTutoria = () => {
 
 ---
 
-**useEffect**
+**useEffect()**
+
+- useEffect()
 
 ---
 
-**useRef**
+**useRef()**
 
 ---
 
-**useLayoutEffect**
+**useLayoutEffect()**
 
 ---
 
-**useContext**
+**useContext()**
 
 ---
 
-**useMemo**
+**useMemo()**
 
 ---
 
-**useCallback**
+**useCallback()**
 
 ---
