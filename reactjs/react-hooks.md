@@ -132,6 +132,8 @@ const Example = () => {
 
 ```
 
+-
+
 ---
 
 **useLayoutEffect()**
