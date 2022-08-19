@@ -89,7 +89,7 @@ function Example(){
     const cleanUp = () => {
       console.log('cleanup function')
     }
-    return cleanup;
+    return cleanUp;
   }); // same as componentWillUnmount
 }
 
