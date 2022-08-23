@@ -132,19 +132,19 @@ const Example = () => {
 
 ```
 
--
+- ***
 
----
+  **useLayoutEffect()**
 
-**useLayoutEffect()**
+  ***
 
----
+  **useContext()**
 
-**useContext()**
+  ***
 
----
+  **useMemo()**
 
-**useMemo()**
+- Signature :
 
 ---
 
