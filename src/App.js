@@ -11,17 +11,8 @@ export default function App() {
 
   useEffect(() => {
     console.log('will run only once when component mounted');
-    newP();
   }, []); // same as componentDidMount
 
-  const newP = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        console.log('wait is over !!');
-        resolve();
-      }, 5000);
-    });
-  };
 
   useEffect(() => {
     const cleanUp = () => {
