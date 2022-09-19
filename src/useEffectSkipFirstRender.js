@@ -1,11 +1,14 @@
 import React, { useRef, useEffect } from 'react';
 
-export default useEffectSkipFirstRender = (callback) => {
-  const ref = useRef('INITIAL_RENDER');
-
-  useEffect(() => {
-    if (ref === 'INITIAL_RENDER' && callback) {
+const useEffectSkipFirstRender = (callback) => {
+  const ref = useRef(0);
+  React.useEffect(() => {
+    if (ref.current === 0) {
       callback();
+      ref.current++;
     }
   }, []);
+  return;
 };
+
+export default useEffectSkipFirstRender;

@@ -5,13 +5,17 @@ import './style.css';
 
 export default function App() {
   const [count, setCounter] = useState();
+  const ref = React.useRef(0);
 
   useEffect(() => {
     console.log('will run on each render cycle');
   });
 
   useEffect(() => {
-    console.log('useEffect called');
+    if (ref.current === 0) {
+      console.log('useEffect called');
+      ref.current++;
+    }
   }, []); // same as componentDidMount
 
   useEffectSkipFirstRender(() => {
