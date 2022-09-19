@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import useEffectSkipFirstRender from './useEffectSkipFirstRender';
 import UserForm from './UserForm';
 import './style.css';
 
@@ -10,9 +11,12 @@ export default function App() {
   });
 
   useEffect(() => {
-    console.log('will run only once when component mounted');
+    console.log('useEffect called');
   }, []); // same as componentDidMount
 
+  useEffectSkipFirstRender(() => {
+    console.log('will run only once when component mounted');
+  });
 
   useEffect(() => {
     const cleanUp = () => {
