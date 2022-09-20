@@ -25,3 +25,6 @@ const message = (function(name){
 })('John');
 console.log(message);
 ```
+
+- 'this' is global object in function invocation
+  -
