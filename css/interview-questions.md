@@ -1,20 +1,20 @@
 # CSS Top Interview Questions
 
-<b>Q:</b> What is CSS Box Model ?
+<b>Q: What is CSS Box Model ?</b>
 
 - It is box model which wrapped around any HTML element. Which includes element Height & Width, padding, border and margin.
 
-<b>Q:</b> What is CSS sprite ?
+<b>Q: What is CSS sprite ?</b>
 
 - CSS sprite combines multiple images into single image.
 
-<b>Q:</b> What is CSS preprocessor ?
+<b>Q: What is CSS preprocessor ?</b>
 
 - Preprocessor generates css styles from preprocessor own syntax.
   ex: sass, less.
   for example these pressors will provides it own features like nested styles, variables, mixins etc. which does not exists in CSS.
 
-<b>Q:</b> Explain the concept of specificity in CSS?
+<b>Q: Explain the concept of specificity in CSS?</b>
 
 - It is the means by which browsers decide which CSS property values are most relevant to an element that will be applied.
 
@@ -35,7 +35,7 @@
 }
 ```
 
-<b>Q:</b>What is !important?
+<b>Q:What is !important?</b>
 
 - !important used to provide more weight than normal property. It is used for overriding styles.
 
@@ -49,12 +49,12 @@ p{
 }
 ```
 
-<b>Q:</b>Explain difference between 'visibility : hidden' and 'display:none'?
+<b>Q: Explain difference between 'visibility : hidden' and 'display:none'?</b>
 
 - visibility: hidden - Hides the element but occupies the space in layout.
 - display:none - hides the elemnt but des not occupy space.
 
-<b>Q:</b>What are different ways to position certain element in CSS?
+<b>Q: What are different ways to position certain element in CSS?</b>
 
 - position element can be static, relative, absolute, fixed and sticky.
 - static : by default elemnt will be in static position
@@ -69,17 +69,17 @@ p{
 
   - when it is created it will be relative to its parent. when certain condition met it will be fixed after that.
 
-<b>Q:</b> What does 'box-sizing : border-box' do?
+<b>Q: What does 'box-sizing : border-box' do?</b>
 
 - This tells the browser to account for any border and padding with elements width and height.
 
-<b>Q:</b> What is the difference between inline, inline-block and block elements ?
+<b>Q: What is the difference between inline, inline-block and block elements ?</b>
 
 - block elements always starts at new line and occupies entire row.
 - inline-block : elemnent does not start at new line and appears at same line with other elements
 - inline-block : elements similar to inline-block elemnents. but inline-block element can have padding, margins on all four sides.
 
-<b>Q</b>: What is pseudo element ?
+<b>Q: What is pseudo element ?</b>
 
 - allow you to select and manipulate parts of an element.
 
@@ -87,9 +87,17 @@ p{
 p::first-line {
   color: blue;
 }
+
+p::before {
+  content: ''
+}
+
+p::after {
+content: url('../../media/warning.svg');
+}
 ```
 
-<b>Q</b>What is pseudo class ?
+<b>Q: What is pseudo class ?</b>
 
 - allows to select an element that is on a specific class.
 
@@ -105,8 +113,21 @@ button : focus{
 
 }
 
+button: nth-child{
+
+}
+
+button: last-child{
+
+}
+
+button: first-child{
+
+}
+
 ```
 
-<b>Q</b>what is difference between flexbox and grid ?
+<b>Q: what is difference between flexbox and grid ?</b>
+
 - flexbox is one dimensional layout to create either row or column layout.
 - grid is two dimensional layout that can handle both row and column layout.
