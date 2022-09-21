@@ -75,4 +75,38 @@ p{
 
 <b>Q:</b> What is the difference between inline, inline-block and block elements ?
 
-- block elements always
+- block elements always starts at new line and occupies entire row.
+- inline-block : elemnent does not start at new line and appears at same line with other elements
+- inline-block : elements similar to inline-block elemnents. but inline-block element can have padding, margins on all four sides.
+
+<b>Q</b>: What is pseudo element ?
+
+- allow you to select and manipulate parts of an element.
+
+```
+p::first-line {
+  color: blue;
+}
+```
+
+<b>Q</b>What is pseudo class ?
+
+- allows to select an element that is on a specific class.
+
+```
+button: hover{
+
+}
+
+button: active{
+
+}
+button : focus{
+
+}
+
+```
+
+<b>Q</b>what is difference between flexbox and grid ?
+- flexbox is one dimensional layout to create either row or column layout.
+- grid is two dimensional layout that can handle both row and column layout.
