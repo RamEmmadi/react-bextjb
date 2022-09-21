@@ -26,7 +26,7 @@
   .class{
     colore: green;
   }
-  .class{ // this will be taken
+  .class{ // this will be applied
     colore: blue;
   }
   ```
