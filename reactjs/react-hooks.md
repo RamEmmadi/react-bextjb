@@ -2,25 +2,28 @@
 
 [**useState**](#useState)
 
-**useReducer**
+[**useEffect()**](#useEffect)
 
-**useEffect()**
+[**useReducer**](#useReducer)
 
-**useState**
+[**useRef()**](#useRef)
 
-**useRef()**
+[**useContext()**](#useContext)
 
-**useLayoutEffect()**
+[**useMemo()**](#useMemo)
 
-**useContext()**
+[**useCallback()**](#useCallback)
 
-**useMemo()**
+[**React.memo()**](#react-memo)
 
-**useCallback()**
+[**useLayoutEffect()**](#useLayoutEffect)
+
+[**useTransition()**](#useTransition)
 
 ---
 
 <a name='useState'></a>
+
 **useState**
 
 - useState is hook helps creating the local state inside functional component. Even between the renders state will be preserved. useState() will return two args: 1. current state value and 2. handler to update the state. Every state update will overwrite the existing state.
@@ -38,6 +41,43 @@ function Example(){
     </div>
   );
 }
+```
+
+---
+
+<a name='useEffect'></a>
+
+**useEffect()**
+
+- useEffect() hook helps in performing the side effects such DOM manipulation, Data fetching, Subscriptions etc.
+- useEffect() helps in implementing class component lifecycle events like componentDidMount, componentDidUpdate and componentWillUnmount in functional component.
+- useEffect() will run on each render cycle.
+- useEffect(callback, list of depnedencies to update component)
+
+```
+import React, {useState, useEffect} from 'react';
+
+function Example(){
+
+  const [count, setCounter] = useState();
+
+  useEffect(()=>{
+    console.log('will run on each render cycle');
+  });
+
+  useEffect(()=>{
+    console.log('will run only once when component mounted');
+  },[]) // same as componentDidMount
+
+  useEffect(()=>{
+    const cleanUp = () => {
+      console.log('cleanup function')
+    }
+    return cleanUp;
+  }); // same as componentWillUnmount
+}
+
+
 ```
 
 ---
@@ -80,41 +120,6 @@ const ReducerTutoria = () => {
       HIDE ME!
     </button>
   </div>);
-}
-
-
-```
-
----
-
-**useEffect()**
-
-- useEffect() hook helps in performing the side effects such DOM manipulation, Data fetching, Subscriptions etc.
-- useEffect() helps in implementing class component lifecycle events like componentDidMount, componentDidUpdate and componentWillUnmount in functional component.
-- useEffect() will run on each render cycle.
-- useEffect(callback, list of depnedencies to update component)
-
-```
-import React, {useState, useEffect} from 'react';
-
-function Example(){
-
-  const [count, setCounter] = useState();
-
-  useEffect(()=>{
-    console.log('will run on each render cycle');
-  });
-
-  useEffect(()=>{
-    console.log('will run only once when component mounted');
-  },[]) // same as componentDidMount
-
-  useEffect(()=>{
-    const cleanUp = () => {
-      console.log('cleanup function')
-    }
-    return cleanUp;
-  }); // same as componentWillUnmount
 }
 
 
