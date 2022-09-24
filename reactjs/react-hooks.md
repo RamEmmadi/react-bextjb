@@ -1,6 +1,6 @@
 # ReactJS Hooks
 
-[**useState**](#useState)
+[**useState()**](#useState)
 
 [**useEffect()**](#useEffect)
 
