@@ -24,7 +24,7 @@
 
 <a name='useState'></a>
 
-## useState
+## useState()
 
 - useState is hook helps creating the local state inside functional component. Even between the renders state will be preserved. useState() will return two args: 1. current state value and 2. handler to update the state. Every state update will overwrite the existing state.
 
@@ -47,7 +47,7 @@ function Example(){
 
 <a name='useEffect'></a>
 
-**useEffect()**
+## useEffect()
 
 - useEffect() hook helps in performing the side effects such DOM manipulation, Data fetching, Subscriptions etc.
 - useEffect() helps in implementing class component lifecycle events like componentDidMount, componentDidUpdate and componentWillUnmount in functional component.
