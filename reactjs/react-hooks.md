@@ -55,7 +55,6 @@ function Example(){
 - useEffect(callback, list of depnedencies to update component)
 
 ```
-
 import React, {useState, useEffect} from 'react';
 
 function Example(){
@@ -77,8 +76,6 @@ function Example(){
     return cleanUp;
   }); // same as componentWillUnmount
 }
-
-
 ```
 
 ---
