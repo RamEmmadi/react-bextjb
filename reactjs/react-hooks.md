@@ -82,7 +82,9 @@ function Example(){
 
 ---
 
-**useReducer**
+<a name='useReducer'></a>
+
+## useReducer
 
 - useReducer similar to useState() to create local state inside funtional component. But it will be more useful when single action need to update the mulitple and complex state.
 
