@@ -152,19 +152,17 @@ const Example = () => {
 
 ```
 
-- ***
+---
 
-  **useLayoutEffect()**
+**useLayoutEffect()**
 
-  ***
+---
 
-  **useContext()**
+**useContext()**
 
-  ***
+---
 
-  **useMemo()**
-
-- Signature :
+**useMemo()**
 
 ---
 
