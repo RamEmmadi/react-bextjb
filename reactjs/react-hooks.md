@@ -2,6 +2,26 @@
 
 **useState**
 
+**useReducer**
+
+**useEffect()**
+
+**useState**
+
+**useRef()**
+
+**useLayoutEffect()**
+
+**useContext()**
+
+**useMemo()**
+
+**useCallback()**
+
+---
+
+**useState**
+
 - useState is hook helps creating the local state inside functional component. Even between the renders state will be preserved. useState() will return two args: 1. current state value and 2. handler to update the state. Every state update will overwrite the existing state.
 
 ```
