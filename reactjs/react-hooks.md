@@ -67,7 +67,7 @@ function Example(){
   });
 
   useEffect(()=>{
-    console.log('will run only once when component mounted');
+    console.log('will run twice when component mounted after React v18');
   },[]) // same as componentDidMount
 
   useEffect(()=>{
