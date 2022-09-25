@@ -321,3 +321,15 @@ function InputFocus() {
 ## React.memo()
 
 ---
+
+<a name='useContext'></a>
+
+## useContext()
+
+---
+
+<a name='useTransition'></a>
+
+## useTransition()
+
+---
