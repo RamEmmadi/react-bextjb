@@ -55,6 +55,8 @@ function Example(){
 - useEffect() will run on each render cycle.
 - useEffect(callback, list of depnedencies to update component)
 
+![useEffect flow](https://dmitripavlutin.com/d0532a1ba251b6730f64aff0a02b0925/callback-cleanup-2.svg)
+
 ```
 import React, {useState, useEffect} from 'react';
 
