@@ -81,7 +81,47 @@ function Example(){
 }
 ```
 
-- ***
+- How to Solve the Infinite Loop of React.useEffect() in below example:
+- (In the below code) After initial rendering, useEffect() executes the side-effect callback that updates the state. The state update triggers re-rendering. After re-rendering useEffect() executes the side-effect callback and again updates the state, which triggers again a re-rendering. ...and so on indefinitely.
+
+```
+import { useEffect, useState } from 'react';
+function CountInputChanges() {
+  const [value, setValue] = useState('');
+  const [count, setCount] = useState(-1);
+  useEffect(() => setCount(count + 1)); // it generates an infinite loop of component re-renderings.
+  const onChange = ({ target }) => setValue(target.value);
+  return (
+    <div>
+      <input type="text" value={value} onChange={onChange} />
+      <div>Number of changes: {count}</div>
+    </div>
+  )
+}
+```
+
+- Two solutions to fix the issue:
+  - Set dependencies array correctly, by passing the state variable "count".
+  ```
+   useEffect(() => setCount(count + 1),[count]);
+  ```
+  - useRef() method:
+  ```
+    import { useEffect, useState, useRef } from 'react';
+    function CountInputChanges() {
+      const [value, setValue] = useState('');
+      const ref = useRef(0);
+      const onChange = ({ target }) => {setValue(target.value); ref.current++ };
+      return (
+        <div>
+          <input type="text" value={value} onChange={onChange} />
+          <div>Number of changes: {ref.current}</div>
+        </div>
+      )
+    }
+  ```
+
+---
 
 <a name='useReducer'></a>
 
