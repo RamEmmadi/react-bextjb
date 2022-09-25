@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import useEffectSkipFirstRender from './useEffectSkipFirstRender';
-import UserForm from './UserForm';
 import './style.css';
 
 export default function App() {
