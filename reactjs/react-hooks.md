@@ -247,6 +247,61 @@ function LogButtonClicks() {
 }
 ```
 
+- Use Case For useRef() : implementing a stopwatch
+
+```
+import { useRef, useState, useEffect } from 'react';
+function Stopwatch() {
+  const timerIdRef = useRef(0);
+  const [count, setCount] = useState(0);
+  const startHandler = () => {
+    if (timerIdRef.current) { return; }
+    timerIdRef.current = setInterval(() => setCount(c => c+1), 1000);
+  };
+  const stopHandler = () => {
+    clearInterval(timerIdRef.current);
+    timerIdRef.current = 0;
+  };
+  useEffect(() => {
+    return () => clearInterval(timerIdRef.current);
+  }, []);
+  return (
+    <div>
+      <div>Timer: {count}s</div>
+      <div>
+        <button onClick={startHandler}>Start</button>
+        <button onClick={stopHandler}>Stop</button>
+      </div>
+    </div>
+  );
+}
+```
+
+- useRef() application: Access DOM elements:
+
+  - useRef() helps in accessing DOM elements in 3 steps:
+    - Define the reference to access the element const elementRef = useRef();
+    - Assign the reference to ref attribute of the element: <div ref={elementRef}></div>;
+    - After mounting, elementRef.current points to the DOM element.
+
+- useRef() use case : focusing an input
+
+```
+import { useRef, useEffect } from 'react';
+function InputFocus() {
+  const inputRef = useRef();
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+  return (
+    <input
+      ref={inputRef}
+      type="text"
+    />
+  );
+}
+```
+
 ---
 
 **useLayoutEffect()**
