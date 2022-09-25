@@ -81,7 +81,8 @@ function Example(){
 }
 ```
 
-- How to Solve the Infinite Loop of React.useEffect() in below example:
+**_ How to Solve the Infinite Loop of React.useEffect() in below example: _**
+
 - (In the below code) After initial rendering, useEffect() executes the side-effect callback that updates the state. The state update triggers re-rendering. After re-rendering useEffect() executes the side-effect callback and again updates the state, which triggers again a re-rendering. ...and so on indefinitely.
 
 ```
