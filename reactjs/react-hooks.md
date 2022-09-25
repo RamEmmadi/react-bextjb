@@ -77,7 +77,7 @@ function Example(){
       console.log('cleanup function')
     }
     return cleanUp;
-  }); // same as componentWillUnmount
+  },[]); // same as componentWillUnmount
 }
 ```
 
