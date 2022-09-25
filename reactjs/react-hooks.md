@@ -158,40 +158,63 @@ useEffect(() => {
 ![useReducer()](https://dmitripavlutin.com/5c33affee33e7c40e73028fb48a8367b/diagram.svg)
 
 ```
+const initialState = {
+  isRunning: false,
+  time: 0,
+};
 
-import React, { useReducer } from 'react';
-
-const reducerFun = (state, action) => {
-  switch(action.type){
-    case "INCREMENT":
-      return { count: state.count +1, showText: state.showText};
-
-    case "TOGGLETEXT":
-      return { count: state.count, showText: !state.showText};
-
-    default:
-      return state;
+function reducer(state, action) {
+  if (action.type === 'start') {
+    return { ...state, isRunning: true };
+  } else if (action.type === 'stop') {
+    return { ...state, isRunning: false };
+  } else if (action.type === 'reset') {
+    return { time: 0, isRunning: false };
+  } else if (action.type === 'tick') {
+    return { ...state, time: state.time + 1 };
   }
+  return state;
 }
 
-const ReducerTutorial = () => {
+export default function StopWatch() {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  const [state, dispatch] = useRedcuer(reducerFun, {count: 0, showText: true});
+  const idRef = React.useRef(0);
 
-  return (<div>
-    <h1>{state.count}</h1>
-    <button onClick={()=>{
-      dispatch({type:"INCREMENT"});
-      dispatch({type:"TOGGLETEXT"})
-    }}>
-      CLICK ME!
-    </button>
-    <button onClick={()=>{
-      dispatch({type:"TOGGLETEXT"})
-    }}>
-      HIDE ME!
-    </button>
-  </div>);
+  useEffect(() => {
+    if (!state.isRunning) return;
+
+    idRef.current = setInterval(() => dispatch({ type: 'tick' }), 1000);
+
+    return () => {
+      clearInterval(idRef.current);
+      idRef.current = 0;
+    };
+  }, [state.isRunning]);
+
+  return (
+    <div>
+      <h1>{state.time}'s</h1>
+      <button
+        style={{ margin: '10px' }}
+        onClick={() => dispatch({ type: 'start' })}
+      >
+        START
+      </button>
+      <button
+        style={{ margin: '10px' }}
+        onClick={() => dispatch({ type: 'stop' })}
+      >
+        STOP
+      </button>
+      <button
+        style={{ margin: '10px' }}
+        onClick={() => dispatch({ type: 'reset' })}
+      >
+        RESET
+      </button>
+    </div>
+  );
 }
 
 
