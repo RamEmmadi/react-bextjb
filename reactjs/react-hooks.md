@@ -120,6 +120,29 @@ function CountInputChanges() {
       )
     }
   ```
+- Another common recipe of an infinite loop is using an object as a dependency of useEffect(), and inside the side-effect updating that object (effectively creating a new object):
+
+```
+useEffect(() => {
+  // Infinite loop!
+  setObject({
+    ...object,
+    prop: 'newValue'
+  })
+}, [object]);
+```
+
+- Avoid using objects as dependencies, but stick to use a specific property only (the end result should be a primitive value):
+
+```
+useEffect(() => {
+  // No infinite loop
+  setObject({
+    ...object,
+    prop: 'newValue'
+  })
+}, [object.whenToUpdateProp]);
+```
 
 ---
 
