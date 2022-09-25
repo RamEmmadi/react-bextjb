@@ -149,9 +149,11 @@ useEffect(() => {
 
 <a name='useReducer'></a>
 
-## useReducer()
+## useReducer(reducer, initialState)
 
-- useReducer similar to useState() to create local state inside funtional component. But it will be more useful when single action need to update the mulitple and complex state.
+- useReducer similar to useState() to create local state inside funtional component. But it will be more useful when single action need to update the mulitple and complex state object. For more simplicity & readiblity, it helps in separating statement out of component.
+
+![useReducer()](https://dmitripavlutin.com/5c33affee33e7c40e73028fb48a8367b/diagram.svg)
 
 ```
 import React, { useReducer } from 'react';
