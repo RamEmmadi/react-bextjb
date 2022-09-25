@@ -16,9 +16,9 @@
 
 [**React.memo()**](#react-memo)
 
-[**useLayoutEffect()**](#useLayoutEffect)
-
 [**useTransition()**](#useTransition)
+
+[**useLayoutEffect()**](#useLayoutEffect)
 
 ---
 
@@ -222,35 +222,29 @@ export default function StopWatch() {
 
 ---
 
-**useRef()**
+<a name='useRef'></a>
 
-- Function Signature:
+## useRef(initialValue)
+
+- useRef accepts one argument as the initial value and returns a reference (aka ref). A reference is an object having a special property current. There are 2 rules to remember about references:
+
+  - The value of the reference is persisted (stays the same) between component re-renderings;
+  - Updating a reference doesn't trigger a component re-rendering.
+
+- Use Case For useRef() : Logging button clicks
 
 ```
-const refContainer = useRef(initialValue);
-```
+import { useRef } from 'react';
+function LogButtonClicks() {
+  const countRef = useRef(0);
 
-- useRef() Hook used for creating refs that gives direct access to DOM elements.
-- This is more useful when working wiht forms.
-
-```
-const Example = () => {
-
-  const textboxRef = useRef(null);
-
-  const btnHandler = () => {
-    // 'current' points to mounted text input element
-    textboxRef.current.focus();
+  const handle = () => {
+    countRef.current++;
+    console.log(`Clicked ${countRef.current} times`); // wont trigger re-rendering
   };
-
-  return(
-    <>
-      <input ref={textboxRef} type="text">
-      <button onClick={btnHandler}>Focus the Box</button>
-    </>
-  )
+  console.log('I rendered!');
+  return <button onClick={handle}>Click me</button>;
 }
-
 ```
 
 ---
@@ -270,3 +264,7 @@ const Example = () => {
 **useCallback()**
 
 ---
+
+```
+
+```
