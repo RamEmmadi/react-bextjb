@@ -8,13 +8,13 @@
 
 [**useRef()**](#useRef)
 
-[**useContext()**](#useContext)
-
 [**useMemo()**](#useMemo)
 
 [**useCallback()**](#useCallback)
 
 [**React.memo()**](#react-memo)
+
+[**useContext()**](#useContext)
 
 [**useTransition()**](#useTransition)
 
