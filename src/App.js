@@ -1,61 +1,28 @@
 import React, { useState, useEffect, useReducer } from 'react';
 import './style.css';
 
-const initialState = {
-  isRunning: false,
-  time: 0,
-};
-
-function reducer(state, action) {
-  if (action.type === 'start') {
-    return { ...state, isRunning: true };
-  } else if (action.type === 'stop') {
-    return { ...state, isRunning: false };
-  } else if (action.type === 'reset') {
-    return { time: 0, isRunning: false };
-  } else if (action.type === 'tick') {
-    return { ...state, time: state.time + 1 };
-  }
-  return state;
-}
-
 export default function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [number, setNumber] = useState(1);
+  const [inc, setInc] = useState(0);
 
-  const idRef = React.useRef(0);
+  const factorialOf = (n) => {
+    return n <= 0 ? 1 : n * factorialOf(n);
+  };
 
-  useEffect(() => {
-    if (!state.isRunning) return;
+  const factorialOf = factorialOf(number);
 
-    idRef.current = setInterval(() => dispatch({ type: 'tick' }), 1000);
+  const onChange = ({ target }) => {
+    setNumber(target.value);
+  };
 
-    return () => {
-      clearInterval(idRef.current);
-      idRef.current = 0;
-    };
-  }, [state.isRunning]);
+  const onClick = () => setInc(inc + 1);
 
   return (
     <div>
-      <h1>{state.time}'s</h1>
-      <button
-        style={{ margin: '10px' }}
-        onClick={() => dispatch({ type: 'start' })}
-      >
-        START
-      </button>
-      <button
-        style={{ margin: '10px' }}
-        onClick={() => dispatch({ type: 'stop' })}
-      >
-        STOP
-      </button>
-      <button
-        style={{ margin: '10px' }}
-        onClick={() => dispatch({ type: 'reset' })}
-      >
-        RESET
-      </button>
+      Factorial of
+      <input type="number" value={number} onChange={onChange} />
+      is {factorial}
+      <button onClick={onClick}>Re-render</button>
     </div>
   );
 }
