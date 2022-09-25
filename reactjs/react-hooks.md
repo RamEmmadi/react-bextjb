@@ -12,7 +12,7 @@
 
 [**useCallback()**](#useCallback)
 
-[**React.memo()**](#react-memo)
+[**React.memo()**](#reactMemo)
 
 [**useContext()**](#useContext)
 
@@ -304,22 +304,20 @@ function InputFocus() {
 
 ---
 
-**useLayoutEffect()**
+<a name='useMemo'></a>
+
+## useMemo()
 
 ---
 
-**useContext()**
+<a name='useCallback'></a>
+
+## useCallback()
 
 ---
 
-**useMemo()**
+<a name='reactMemo'></a>
+
+## React.memo()
 
 ---
-
-**useCallback()**
-
----
-
-```
-
-```
