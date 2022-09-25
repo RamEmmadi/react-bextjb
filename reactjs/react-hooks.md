@@ -228,7 +228,7 @@ export default function StopWatch() {
 
 - useRef accepts one argument as the initial value and returns a reference (aka ref). A reference is an object having a special property current. There are 2 rules to remember about references:
 
-  - The value of the reference is persisted (stays the same) between component re-renderings;
+  - The value of the reference is persisted (stays the same) between component re-renderings
   - Updating a reference doesn't trigger a component re-rendering.
 
 - Use Case For useRef() : Logging button clicks
@@ -281,7 +281,7 @@ function Stopwatch() {
 
   - useRef() helps in accessing DOM elements in 3 steps:
     - Define the reference to access the element const elementRef = useRef();
-    - Assign the reference to ref attribute of the element: <div ref={elementRef}></div>;
+    - Assign the reference to ref attribute of the element: `<div ref={elementRef}></div>;`
     - After mounting, elementRef.current points to the DOM element.
 
 - useRef() use case : focusing an input
