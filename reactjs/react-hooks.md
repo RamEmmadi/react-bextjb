@@ -151,11 +151,14 @@ useEffect(() => {
 
 ## useReducer(reducer, initialState)
 
+- The useReducer() hook in React lets you separate the state management from the rendering logic of the component.
 - useReducer similar to useState() to create local state inside funtional component. But it will be more useful when single action need to update the mulitple and complex state object. For more simplicity & readiblity, it helps in separating statement out of component.
+- useReducer() fits great with relatively complex state update (requiring at least 2-3 update actions).
 
 ![useReducer()](https://dmitripavlutin.com/5c33affee33e7c40e73028fb48a8367b/diagram.svg)
 
 ```
+
 import React, { useReducer } from 'react';
 
 const reducerFun = (state, action) => {
