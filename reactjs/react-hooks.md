@@ -49,11 +49,11 @@ function Example(){
 
 ## useEffect(callback, [dependencies]);
 
-- useEffect() hook helps in performing the side effects such DOM manipulation, Data fetching, Subscriptions etc.
+- useEffect(callback, [list of depnedencies to update component])
+- useEffect() hook helps in performing the side effects such DOM manipulation, Data fetching, Subscriptions. Timers etc.
 - Place side-effect logic into the callback function, then use the dependencies argument to control when you want the side-effect to run. That's the sole purpose of useEffect().
 - useEffect() helps in implementing class component lifecycle events like componentDidMount, componentDidUpdate and componentWillUnmount in functional component.
-- useEffect() will run on each render cycle.
-- useEffect(callback, list of depnedencies to update component)
+- useEffect() will run on each render cycle when dependencies argument is not provided.
 
 ![useEffect flow](https://dmitripavlutin.com/d0532a1ba251b6730f64aff0a02b0925/callback-cleanup-2.svg)
 
@@ -81,7 +81,7 @@ function Example(){
 }
 ```
 
----
+- ***
 
 <a name='useReducer'></a>
 
