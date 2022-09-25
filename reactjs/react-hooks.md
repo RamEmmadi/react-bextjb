@@ -169,7 +169,7 @@ const reducerFun = (state, action) => {
   }
 }
 
-const ReducerTutoria = () => {
+const ReducerTutorial = () => {
 
   const [state, dispatch] = useRedcuer(reducerFun, {count: 0, showText: true});
 
