@@ -4,7 +4,7 @@
 
 [**useEffect()**](#useEffect)
 
-[**useReducer**](#useReducer)
+[**useReducer()**](#useReducer)
 
 [**useRef()**](#useRef)
 
