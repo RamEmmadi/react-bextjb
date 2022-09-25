@@ -9,7 +9,7 @@ export default function App() {
     return n <= 0 ? 1 : n * factorialOf(n);
   };
 
-  const factorialOf = factorialOf(number);
+  const factorial = factorialOf(number);
 
   const onChange = ({ target }) => {
     setNumber(target.value);
