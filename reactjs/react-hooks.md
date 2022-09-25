@@ -158,6 +158,8 @@ useEffect(() => {
 ![useReducer()](https://dmitripavlutin.com/5c33affee33e7c40e73028fb48a8367b/diagram.svg)
 
 ```
+//STOP WATCH EXAMPLE
+
 const initialState = {
   isRunning: false,
   time: 0,
@@ -215,9 +217,7 @@ export default function StopWatch() {
       </button>
     </div>
   );
-}
-
-
+};
 ```
 
 ---
