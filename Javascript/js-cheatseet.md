@@ -1,13 +1,24 @@
 ## JS Cheat sheet
 
+https://devhints.io/js-array
 https://www.shortcutfoo.com/app/dojos/javascript-arrays/cheatsheet
-
 https://www.shortcutfoo.com/app/dojos/javascript-strings/cheatsheet
 
-arr1.concat(arr2) : Return new array by joining arrays a1 and a2 together
+### Arrays
+
+const list = [a,b,c,d,e];
 
 ```
-const arr1 = [1,2,3,4]
-const arr2 = [3,4,9,0]
-console.log(arr1.concat(arr2)) //[1, 2, 3, 4, 3, 4, 9, 0]
+list[1]  //result : b
+list.indexOf(d) //result : 3
+list.lastIndexOf(d) //result : 3
+list.includes(e) // result: true
+```
+
+## Adding Items:
+
+```
+list.push('f') //list == [a, b, c, d, e, f]
+list.unshift('z') // list == [z, a, b, c, d, e]
+list.slice(0, 0, 'z') // list == [z, a, b, c, d, e]
 ```
