@@ -27,8 +27,22 @@
 
   ```
   <form action="http://bank.com/transfer.do" method="POST">
-  <input type="hidden" name="acct" value="ATTACKER_ACCOUNT"/>
-  <input type="hidden" name="amount" value="10000"/>
-  <input type="submit" name="view my pictures" />
+    <input type="hidden" name="acct" value="ATTACKER_ACCOUNT"/>
+    <input type="hidden" name="amount" value="10000"/>
+    <input type="submit" name="view my pictures" />
   </form>
   ```
+
+  - When user click on submit button, this can also be executed using javascript.
+
+- Preventions:
+  - CSRF Token : For every session of a user, the server should generate a randomized token (CSRF Token) and send it to the client. The client can save the token, from where javascript can read it.
+  - When a web application is making an HTTP request, the application should include that randomized token (CSRF Token) in the header of each request. CSRF token must be generated using SHA256/512.
+  - Any request from app must be validated by comparing token found in session, in case if token is not found or does not match with value in user session then request should be dropped. And event should be logged as CSRF attack in progress.
+
+### DOS(Denial Of Service) Attack:
+
+- DOS attack is a cyber-attack in which server resource made unavailable to actual user by disrupting services of server. Usually attacker flood the server with huge reqeusts per milli second to disrupt the services. In general robots are deployed to make it happen.
+- In a distributed denial-of-service attack (DDoS attack), the incoming traffic flooding the victim originates from many different sources. This effectively makes it impossible to stop the attack simply by blocking a single source/IP address.
+- Prevention: Using Captcha at public-facing endpoints (login, registration, contact) — a captcha is a computer program or system intended to distinguish humans from bots. Most of the DOS attacks are carried out using bots. Captcha identifies bots and prevents them from making requests.
+- Google’s reCaptcha is a highly advanced service to protect bots from abusing your applications.
