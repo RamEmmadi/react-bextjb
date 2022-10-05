@@ -359,7 +359,7 @@ function factorialOf(n) {
 
 <a name='useCallback'></a>
 
-## useCallback()
+## useCallback(fn, deps)
 
 - useCallback will help to retain same funtion instance between the rendering cycles.
 - Usually when react re-renders, funtions object are re-created on each rendering cycle. In some cases single funtion instance must be retained between the rendering cycle. such as:
@@ -411,6 +411,9 @@ function factorialOf(n) {
 <a name='reactMemo'></a>
 
 ## React.memo()
+
+- When React.memo() wraps a component, React memoizes the rendered output of the wrapped component then skips unnecessary renderings.
+- React.memo() improves the performance.
 
 ---
 
