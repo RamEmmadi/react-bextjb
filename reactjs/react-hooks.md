@@ -413,7 +413,38 @@ function factorialOf(n) {
 ## React.memo()
 
 - When React.memo() wraps a component, React memoizes the rendered output of the wrapped component then skips unnecessary renderings.
-- React.memo() improves the performance.
+- React.memo() improves the performance. React.memo() is a great tool to memoize functional components. When applied correctly, it prevents useless re-renderings when the next props equal to previous ones.
+
+- Example:
+
+```
+
+export function Movie({ title, releaseDate }) {
+  return (
+    <div>
+      <div>Movie title: {title}</div>
+      <div>Release date: {releaseDate}</div>
+    </div>
+  );
+}
+export const MemoizedMovie = React.memo(Movie);
+
+// First render - MemoizedMovie IS INVOKED.
+// Second render - MemoizedMovie IS NOT INVOKED.
+
+```
+
+**Custom equicality check for props:**
+
+- By default React.memo() does a shallow comparison of props and objects of props. To customize the props comparison you can use the second argument to indicate an equality check function:
+
+```
+function moviePropsAreEqual(prevMovie, nextMovie) {
+  return prevMovie.title === nextMovie.title
+    && prevMovie.releaseDate === nextMovie.releaseDate;
+}
+const MemoizedMovie2 = React.memo(Movie, moviePropsAreEqual);
+```
 
 ---
 
