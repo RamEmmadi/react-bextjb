@@ -446,6 +446,19 @@ function moviePropsAreEqual(prevMovie, nextMovie) {
 const MemoizedMovie2 = React.memo(Movie, moviePropsAreEqual);
 ```
 
+**When to use React.memo()**
+
+- Funtional component
+- Component Renders Often
+- Re-render with same props.
+- Component must be medium to big size
+
+- The more often the component renders with the same props, the heavier and the more computationally expensive the output is, the more chances are that component needs to be wrapped in React.memo().
+
+**When to avoid React.memo()**
+
+- If the component isn't heavy and usually renders with different props, most likely you don't need React.memo()
+
 ---
 
 <a name='useContext'></a>
