@@ -368,7 +368,37 @@ function factorialOf(n) {
   - When funtion object is dependency to other hooks, e.g. useEffect(...,[callback]).
 
 - That's when useCallback is helpful.
-- 
+- Good use case for useCallback():
+
+```
+import useSearch from './fetch-items';
+
+function MyBigList({ term, onItemClick }) {
+  const items = useSearch(term);
+  const map = item => <div onClick={onItemClick}>{item}</div>;
+  return <div>{items.map(map)}</div>;
+}
+
+export default React.memo(MyBigList);
+
+```
+
+```
+import { useCallback } from 'react';
+
+export function MyParent({ term }) {
+  const onItemClick = useCallback(event => {
+    console.log('You clicked ', event.currentTarget);
+  }, [term]);
+  return (
+    <MyBigList
+      term={term}
+      onItemClick={onItemClick}
+    />
+  );
+}
+
+```
 
 ---
 
