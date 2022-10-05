@@ -465,6 +465,62 @@ const MemoizedMovie2 = React.memo(Movie, moviePropsAreEqual);
 
 ## useContext()
 
+- The context in React is a concept that lets you supply child components with global data, no matter how deep they are in the components tree. Using the context requires 3 steps: creating, providing, and consuming the context.
+
+- Real world usecases :
+
+  - global state
+  - theme
+  - application configuration
+  - authenticated user name
+  - user settings
+  - preferred language
+  - a collection of services
+
+- Sample Code(Updates the context):
+
+  ```
+  import { createContext, useState, useContext, useMemo } from 'react';
+
+  // context creation
+  const UserContext = createContext({
+  userName: '',
+  //updates the context
+  setUserName: () => {},
+  });
+  function Application() {
+  const [userName, setUserName] = useState('John Smith');
+  const value = useMemo(
+    () => ({ userName, setUserName }),
+    [userName]
+  );
+
+  // providing context
+  return (
+    <UserContext.Provider value={value}>
+      <UserNameInput />
+      <UserInfo />
+    </UserContext.Provider>
+  );
+  }
+  function UserNameInput() {
+  // using context
+  const { userName, setUserName } = useContext(UserContext);
+  const changeHandler = event => setUserName(event.target.value);
+  return (
+    <input
+      type="text"
+      value={userName}
+      onChange={changeHandler}
+    />
+  );
+  }
+  function UserInfo() {
+  const { userName } = useContext(UserContext);
+  return <span>{userName}</span>;
+  }
+  ```
+
 ---
 
 <a name='useTransition'></a>
